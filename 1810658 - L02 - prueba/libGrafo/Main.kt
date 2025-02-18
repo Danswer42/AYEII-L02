@@ -1,4 +1,3 @@
-//MAIN
 fun printLadosGrafo(g: Grafo) {
   for (e in g) {
 println("e: ${e}")
@@ -6,8 +5,8 @@ println("e: ${e}")
 }
 
 fun main(args: Array<String>) {
-  val archivo1 = 2
-  val archivo2 = 3
+  val archivo1 = "libGrafo\Grafo.txt"
+  val archivo2 = "libGrafo\GrafoCosto.txt"
   var g = GrafoNoDirigido(10)
   g.agregarArista(Arista(1, 2))
   g.agregarArista(Arista(3, 2))
@@ -31,3 +30,34 @@ fun main(args: Array<String>) {
   val gd = GrafoDirigidoCosto(archivo2)
   printLadosGrafo(gd) 
 }
+
+/*fun leerArchivo(nombreArchivo: String): List<String> {
+    val lineas = mutableListOf<String>()
+    try {
+        val archivo = File(nombreArchivo)
+        archivo.forEachLine { linea ->
+            lineas.add(linea)
+        }
+    } catch (e: Exception) {
+        println("Error al leer el archivo: ${e.message}")
+    }
+    return lineas
+}
+
+fun main(args: Array<String>) {
+  if (args.size != 2) {
+      println("Debe proporcionar dos argumentos: nombre_archivo_grafo.txt nombre_archivo_grafo_costo.txt")
+      return
+  }
+
+  val archivoGrafo = args[0]
+  val archivoGrafoCosto = args[1]
+
+  val grafo = GrafoNoDirigido(archivoGrafo)
+  println("Grafo desde archivo:")
+  printLadosGrafo(grafo)
+
+  val grafoCosto = GrafoNoDirigidoCosto(archivoGrafoCosto)
+  println("Grafo desde archivo con costo:")
+  printLadosGrafo(grafoCosto)
+}*/
